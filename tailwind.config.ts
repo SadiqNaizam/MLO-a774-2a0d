@@ -52,6 +52,9 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+        /* New colors from PRD */
+        header: 'hsl(var(--header-bg))',
+        iconBackground: 'hsl(var(--icon-bg))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -64,10 +67,17 @@ export default {
 				}
 			},
 			borderRadius: {
+        /* Values will change based on updated --radius CSS variable (0.375rem) */
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+      /* PRD typography.primaryFont is "Sans-serif". Tailwind's default is sans-serif.
+         No explicit fontFamily extension needed unless a specific stack or var(--font-sans) is required.
+         If var(--font-sans) were used, it would be added here:
+         fontFamily: { sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans], },
+         For now, relying on Tailwind's default sans-serif font stack applied via base styles or explicit `font-sans` class.
+      */
 			keyframes: {
 				'accordion-down': {
 					from: {
